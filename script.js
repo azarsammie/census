@@ -63,6 +63,7 @@ fetch('./census.json')
             }
         });
     }
+    
         // Graph
 
         var ctx = document.getElementById('chart').getContext('2d');
