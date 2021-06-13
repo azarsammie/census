@@ -48,6 +48,21 @@ fetch('./census.json')
         let individualCounty = censusData.reduce((acc, value) => (acc[value.county] = (acc[value.county] || 0) + value.male + value.female, acc), {})
         console.log('Total for county', individualCounty);
 
+        // Loop through the object
+        // Execute this on an on change even for the conties
+         // This can be the county selected by the user
+         function CND(sv){
+        var selectedCounty = sv;
+        console.log("*****"+selectedCounty+"*****");
+
+        censusData.map(ele => {
+            // Check if the current object matches Selected County
+            if(ele.county == selectedCounty){
+                // Do anything with the data associated with Selected County`
+                console.log(ele.district);
+            }
+        });
+    }
         // Graph
 
         var ctx = document.getElementById('chart').getContext('2d');
